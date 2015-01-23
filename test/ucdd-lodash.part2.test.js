@@ -51,6 +51,12 @@ function test_range() {
     test('_.range(4)')
     test('_.range(1,5)')
     test('_.range(0)')
+    
+    // Extra tests
+    test('_.range(-5)')
+    test('_.range(-8,-1)')
+    test('_.range(-3,4)')
+    test('_.range(4,-2)')
 }
 
 function test_pick() {
@@ -75,6 +81,18 @@ function test_every() {
 function test_find() {
     test('_.find(users, {admin: true, gender: "m"})')
     test('_.find(users, {gender: "m"})')
+    
+    // Extra tests
+    test('_.find(users, {badField: "m"})')
+    test('_.find(users, {})')
+    test('_.find([{}], {})')
+    test('_.find([], {})')
+    test('_.find([], {badField: 42})')
+    test('_.find([{},{}], {badField: 42})')
+    test('_.find([{}])')
+    test('_.find([111,222])')
+    test('_.find(users)')
+    test('_.find([1,2,3], {badField: 42})')
 }
 
 
